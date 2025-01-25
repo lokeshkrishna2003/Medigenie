@@ -79,7 +79,7 @@ const handleFocus=()=>{
         <section className="bg-[#18A0A9] text-[#FFFFFF]  py-[100px] !w-[100%]" id="Footer" ref={props.FooterSection}> 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:flex xl:flex justify-around text-start">
                 <div className="flex flex-col m-[20px]">
-                      <span className="flex  mb-[10px] font-semibold text-[24px]"> <img src="assets/healthcare 1(1).svg" alt="" className="mr-[18px]" />DiagnoseWizard</span>
+                      <span className="flex  mb-[10px] font-semibold text-[24px]"> <img src="assets/healthcare 1(1).svg" alt="" className="mr-[18px]" />MedGenie</span>
                     <button className="flex border-[1px] border-[#FFFFFF] p-[10px] rounded-xl py-[15px] my-[10px]" onClick={navigateToHospitals}><img src="/assets/Vector(17).svg" alt="" className="mr-[18px]" />Take an appointment</button>
                     <button className="flex border-[1px] border-[#FFFFFF] p-[10px] rounded-xl py-[15px] my-[10px] " onClick={handleFocus} ><img src="assets/mail_FILL0_wght200_GRAD0_opsz24.svg" alt="" className="mr-[18px] text-[#FFFFFF] w-[18px] " />Message us</button>
                 </div>
