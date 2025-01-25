@@ -48,7 +48,7 @@ Users can store and retrieve their medical reports and diagnosis history, aiding
 The website empowers users by providing them with insights and information, enabling them to take a more active role in their healthcare decisions.
 
 # SetUp
- `git clone https://github.com/Kota-Karthik/MedGenie.git`
+ `git clone https://github.com/venkatavamsidama/MedGenie`
 ## Frontend Setup
  `cd MedGenie ` <br>
  `npm install` <br>
