@@ -9,7 +9,7 @@ on the backend to provide you with accurate disease predictions based on your me
 Users can input their symptoms, medical history, and test results, allowing the website to assist in identifying potential diseases or conditions based on the provided information.
 
 ## Quick Initial Diagnosis 
-The website offers users a preliminary diagnosis quickly, which can serve as a starting point for understanding their health concerns. This initial insight can be especially useful for those looking for a preliminary assessment.
+The website offers users a preliminary diagnosis quickly, which can serve as  starting point for understanding their health concerns. This initial insight can be especially useful for those looking for a preliminary assessment.
 
 ## Second Opinion 
 Users can use the website to cross-check or verify diagnoses received from healthcare professionals, providing an additional layer of confidence in their medical assessments.
