@@ -1,6 +1,6 @@
 # MedGenie
 Introducing a  cutting-edge medical diagnostic website that harnesses the power of technology to revolutionize healthcare. 
-This innovative platform seamlessly blends a user-friendly React frontend with the robust capabilities  of  Flask and Express.js
+This innovative platform seamlessly blends a user-friendly React frontend with the robust capabilities  of Flask and Express.js
 on the backend to provide you with accurate disease predictions based on your medical reports.
 
 # Unlocking the Potential : Versatile Uses of Our MedGenie
