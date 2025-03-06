@@ -13,7 +13,7 @@ const Home = (props) => {
                 </div>
             </div>
             <div className="lg:ml-[95px] text-start ">
-                <p className="text-[15px] sm:text-[20px] text-[#00A0AA] font-bold flex">Welcome to MedGenie</p>
+                <p className="text-[15px] sm:text-[20px] text-[#00A0AA] font-bold flex">Welcome to MediGenie</p>
                 <h1 className="text-4xl leading-10 sm:leading-[90px] text-[#000] font-bold flex text-start mt-[20px] sm:text-[70px]">
                     Your Journey to
                     Better Health

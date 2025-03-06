@@ -76,7 +76,7 @@ const ConnectWithUs = (props) => {
                         Connect With Us
                     </p>
                     <h1 className="text-[30px] leading-[30px] sm:leading-[40px] text-[#000] font-bold flex text-start mt-[20px] sm:text-[40px] mb-[40px]">
-                        Connect with MedGenie, Take a step towards prevention
+                        Connect with MediGenie, Take a step towards prevention
                     </h1>
                     <p className="font-medium text-[20px]">
                         Far far away, behind the word mountains, far from the countries Waganda and Asgard.

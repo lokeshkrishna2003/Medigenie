@@ -37,7 +37,7 @@ const Navbar = (props) => {
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <a href="#" className="flex mr-[80px]">
                         <img src="/assets/healthcare 1.svg" alt="" />
-                        <div className="font-bold text-[20px]">MedGenie</div>
+                        <div className="font-bold text-[20px]">MediGenie</div>
                     </a>
                     <button
                         onClick={toggleMenu}

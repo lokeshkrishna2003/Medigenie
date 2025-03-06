@@ -20,16 +20,16 @@ const SendMail = async (email,otp,UserName, template) => {
     let subject, text, html;
    
     if (template === "registration") {
-      subject = "Welcome to MedGenie - Registration OTP";
+      subject = "Welcome to MediGenie - Registration OTP";
       text =
         `Hello ${UserName},\n\n` +
-        `Thank you for choosing MedGenie! You're just one step away from getting started.` +
+        `Thank you for choosing MediGenie! You're just one step away from getting started.` +
         `Here's your OTP for registration:\n\n` +
         `OTP: ${otp}\n\n` +
         `Simply enter this OTP to complete your registration process.` +
         `If you have any questions or need assistance, feel free to contact us.\n\n` +
         `Best regards,\n` +
-        `The MedGenie Team`;
+        `The MediGenie Team`;
 
       html = `<html>
        <body style="font-family: Arial, sans-serif; background-color: #f2f2f2; margin: 0; padding: 0; ;">
@@ -41,18 +41,18 @@ const SendMail = async (email,otp,UserName, template) => {
                 <tr>
                   <td>
                     <div style="text-align: center;">
-                    <h1 style="color: rgb(8, 32, 169); user-select:none">MedGenie</h1>
+                    <h1 style="color: rgb(8, 32, 169); user-select:none">MediGenie</h1>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <td style="padding: 20px 0;">
                     <p style="font-size: 18px; color: #333333;">Hello ${UserName},</p>
-                    <p style="font-size: 16px; color: #666666;">Thank you for choosing MedGenie! You're just one step away
+                    <p style="font-size: 16px; color: #666666;">Thank you for choosing MediGenie! You're just one step away
                       from getting started.</p>
                     <p style="font-size: 16px; color: #666666;">Here's your OTP for registration:</p>
                     <p style="font-size: 20px; color: #333333;"><strong>${otp}</strong></p>
-                    <p style="font-size: 16px; color: #666666;">Best regards,<br>The MedGenie Team</p>
+                    <p style="font-size: 16px; color: #666666;">Best regards,<br>The MediGenie Team</p>
                   </td>
                 </tr>
               </table>
@@ -63,13 +63,13 @@ const SendMail = async (email,otp,UserName, template) => {
       
       </html>`;
     } else if (template === "changePassword") {
-      subject = "MedGenie-Your password is changed!!";
+      subject = "MediGenie-Your password is changed!!";
       text =
         `Hello ${UserName} ,\n\n` +
-        `You have changed your password for your MedGenie account.` +
+        `You have changed your password for your MediGenie account.` +
         `If you didn't change this password, please contact us immediately.\n\n` +
         `Best regards,\n` +
-        `The MedGenie Team`;
+        `The MediGenie Team`;
 
       html = `<html>
 
@@ -82,14 +82,14 @@ const SendMail = async (email,otp,UserName, template) => {
                 <tr>
                   <td>
                     <div style="text-align: center;">
-                    <h1 style="color: rgb(8, 32, 169); user-select:none">MedGenie</h1>
+                    <h1 style="color: rgb(8, 32, 169); user-select:none">MediGenie</h1>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <p style="font-size: 18px; color: #333333;">Hello ${UserName},</p>
-                    <p style="font-size: 16px; color: #666666;">You have changed your password for your MedGenie account.
+                    <p style="font-size: 16px; color: #666666;">You have changed your password for your MediGenie account.
                       account.</p>
                    
                     <p style="font-size: 16px; color: #666666;">If you didn't change this password, please contact us immediately.</p>
@@ -98,7 +98,7 @@ const SendMail = async (email,otp,UserName, template) => {
                 <tr>
                   <td>
                     <p style="font-size: 16px; color: #666666; margin-top: 20px;">Best regards,</p>
-                    <p style="font-size: 16px; color: #333333; font-weight: bold;">The MedGenie Team</p>
+                    <p style="font-size: 16px; color: #333333; font-weight: bold;">The MediGenie Team</p>
                   </td>
                 </tr>
               </table>
@@ -109,14 +109,14 @@ const SendMail = async (email,otp,UserName, template) => {
       
       </html>`;
     }else if (template === "forgotPassword") {
-      subject = "MedGenie-Otp to change your password!!";
+      subject = "MediGenie-Otp to change your password!!";
       text =
         `Hello ${UserName} ,\n\n` +
-        `You have forgot your password for your MedGenie account.` +
+        `You have forgot your password for your MediGenie account.` +
         `Your OTP to reset Password is ${otp}\n`+
         `If you didn't do this , please contact us immediately.\n\n` +
         `Best regards,\n` +
-        `The MedGenie Team`;
+        `The MediGenie Team`;
 
       html = `<html>
 
@@ -129,14 +129,14 @@ const SendMail = async (email,otp,UserName, template) => {
                 <tr>
                   <td>
                     <div style="text-align: center;">
-                    <h1 style="color: rgb(8, 32, 169); user-select:none">MedGenie</h1>
+                    <h1 style="color: rgb(8, 32, 169); user-select:none">MediGenie</h1>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <p style="font-size: 18px; color: #333333;">Hello ${UserName},</p>
-                    <p style="font-size: 16px; color: #666666;">You have forgot your password for your MedGenie account</p>
+                    <p style="font-size: 16px; color: #666666;">You have forgot your password for your MediGenie account</p>
                     <p style="font-size: 16px; color: #666666;">Your OTP to reset Password is ${otp}</p>
 
                     <p style="font-size: 16px; color: #666666;">If you didn't do this , please contact us immediately.</p>
@@ -145,7 +145,7 @@ const SendMail = async (email,otp,UserName, template) => {
                 <tr>
                   <td>
                     <p style="font-size: 16px; color: #666666; margin-top: 20px;">Best regards,</p>
-                    <p style="font-size: 16px; color: #333333; font-weight: bold;">The MedGenie Team</p>
+                    <p style="font-size: 16px; color: #333333; font-weight: bold;">The MediGenie Team</p>
                   </td>
                 </tr>
               </table>
@@ -159,14 +159,14 @@ const SendMail = async (email,otp,UserName, template) => {
       subject = "Delete Account Requested";
       text =
         `Hello ${UserName},\n\n` +
-        `You have requested the deletion of your account for your MedGenie account.` +
+        `You have requested the deletion of your account for your MediGenie account.` +
         `Here's the OTP for deleting your account: ${otp}\n\n` +
         `Please proceed with caution, as this action is irreversible.` +
         `If you didn't request this account deletion, please contact us immediately.` +
         `For security reasons, this OTP will expire in 24 hours.\n\n` +
-        `Before deleting your account, please ensure that you've backed up any important data associated with your MedGenie account.\n\n` +
+        `Before deleting your account, please ensure that you've backed up any important data associated with your MediGenie account.\n\n` +
         `Best regards,\n` +
-        `The MedGenie Team`;
+        `The MediGenie Team`;
 
       html = `<html>
       <body style="font-family: Arial, sans-serif; background-color: #f2f2f2; margin: 0; padding: 0;">
@@ -178,7 +178,7 @@ const SendMail = async (email,otp,UserName, template) => {
                 <tr>
                   <td>
                     <div style="text-align: center;">
-                    <h1 style="color: rgb(8, 32, 169); user-select:none">MedGenie</h1>
+                    <h1 style="color: rgb(8, 32, 169); user-select:none">MediGenie</h1>
                     </div>
                   </td>
                 </tr>
@@ -186,7 +186,7 @@ const SendMail = async (email,otp,UserName, template) => {
                   <td>
                     <p style="font-size: 18px; color: #333333;">Hello ${UserName},</p>
                     <p style="font-size: 16px; color: #666666;">You have requested the deletion of your account for your
-                      MedGenie account.</p>
+                      MediGenie account.</p>
                     <p style="font-size: 20px; color: #333333;">Here's the OTP for deleting your account:
                       <strong>${otp}</strong>
                     </p>
@@ -198,13 +198,13 @@ const SendMail = async (email,otp,UserName, template) => {
                     </p>
                     <p style="font-size: 16px; color: #666666;">For security reasons, this OTP will expire in 24 hours.</p>
                     <p style="font-size: 16px; color: #666666; margin-top: 20px;">Before deleting your account, please ensure
-                      that you've backed up any important data associated with your MedGenie account.</p>
+                      that you've backed up any important data associated with your MediGenie account.</p>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <p style="font-size: 16px; color: #666666; margin-top: 20px;">Best regards,</p>
-                    <p style="font-size: 16px; color: #333333; font-weight: bold;">The MedGenie Team</p>
+                    <p style="font-size: 16px; color: #333333; font-weight: bold;">The MediGenie Team</p>
                   </td>
                 </tr>
               </table>
@@ -217,11 +217,11 @@ const SendMail = async (email,otp,UserName, template) => {
       subject = "Account Deleted";
       text =
         `Hello ${UserName},\n\n` +
-        `Your MedGenie account has been successfully deleted as per your request.` +
+        `Your MediGenie account has been successfully deleted as per your request.` +
         `If you have any questions or need further assistance, please contact us.` +
         `We appreciate your time with us and hope to serve you again in the future.\n\n` +
         `Best regards,\n` +
-        `The MedGenie Team`;
+        `The MediGenie Team`;
 
       html = `<html>
 
@@ -234,14 +234,14 @@ const SendMail = async (email,otp,UserName, template) => {
                 <tr>
                   <td>
                     <div style="text-align: center;">
-                    <h1 style="color: rgb(8, 32, 169); user-select:none">MedGenie</h1>
+                    <h1 style="color: rgb(8, 32, 169); user-select:none">MediGenie</h1>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <p style="font-size: 18px; color: #333333;">Hello ${UserName},</p>
-                    <p style="font-size: 16px; color: #666666;">Your MedGenie account has been successfully deleted as per
+                    <p style="font-size: 16px; color: #666666;">Your MediGenie account has been successfully deleted as per
                       your request.</p>
                     <p style="font-size: 16px; color: #666666;">If you have any questions or need further assistance, please
                       don't hesitate to contact us.</p>
@@ -252,7 +252,7 @@ const SendMail = async (email,otp,UserName, template) => {
                 <tr>
                   <td>
                     <p style="font-size: 16px; color: #666666; margin-top: 20px;">Best regards,</p>
-                    <p style="font-size: 16px; color: #333333; font-weight: bold;">The MedGenie Team</p>
+                    <p style="font-size: 16px; color: #333333; font-weight: bold;">The MediGenie Team</p>
                   </td>
                 </tr>
               </table>
@@ -266,13 +266,13 @@ const SendMail = async (email,otp,UserName, template) => {
       subject = "Resend OTP";
       text =
         `Hello ${UserName},\n\n` +
-        `You have requested to resend the OTP for your MedGenie account.` +
+        `You have requested to resend the OTP for your MediGenie account.` +
         `Here's your OTP: ${otp}\n\n` +
         `Please use this OTP to complete your action.` +
         `If you didn't request this OTP, please ignore this email.` +
         `For security reasons, this OTP will expire in 5 minutes.\n\n` +
         `Best regards,\n` +
-        `The MedGenie Team`;
+        `The MediGenie Team`;
 
       html = `
       <html>
@@ -285,14 +285,14 @@ const SendMail = async (email,otp,UserName, template) => {
                   <tr>
                     <td>
                       <div style="text-align: center;">
-                        <h1 style="color: rgb(8, 32, 169); user-select: none;">MedGenie</h1>
+                        <h1 style="color: rgb(8, 32, 169); user-select: none;">MediGenie</h1>
                       </div>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <p style="font-size: 18px; color: #333333;">Hello ${UserName},</p>
-                      <p style="font-size: 16px; color: #666666;">You have requested to resend the OTP for your MedGenie account.</p>
+                      <p style="font-size: 16px; color: #666666;">You have requested to resend the OTP for your MediGenie account.</p>
                       <p style="font-size: 20px; color: #333333;">Here's your OTP: <strong>${otp}</strong></p>
                       <p style="font-size: 16px; color: #666666;">Please use this OTP to complete your action.</p>
                       <p style="font-size: 16px; color: #666666;">If you didn't request this OTP, please ignore this email.</p>
@@ -302,7 +302,7 @@ const SendMail = async (email,otp,UserName, template) => {
                   <tr>
                     <td>
                       <p style="font-size: 16px; color: #666666; margin-top: 20px;">Best regards,</p>
-                      <p style="font-size: 16px; color: #333333; font-weight: bold;">The MedGenie Team</p>
+                      <p style="font-size: 16px; color: #333333; font-weight: bold;">The MediGenie Team</p>
                     </td>
                   </tr>
                 </table>
@@ -318,7 +318,7 @@ const SendMail = async (email,otp,UserName, template) => {
         `thanks for giving your valuable feedback\n`+
         `our team will keep on improving our work and services for you\n`+
         `Best regards,\n` +
-        `The MedGenie Team`;
+        `The MediGenie Team`;
 
       html = `
       <html>
@@ -331,7 +331,7 @@ const SendMail = async (email,otp,UserName, template) => {
                   <tr>
                     <td>
                       <div style="text-align: center;">
-                        <h1 style="color: rgb(8, 32, 169); user-select: none;">MedGenie</h1>
+                        <h1 style="color: rgb(8, 32, 169); user-select: none;">MediGenie</h1>
                       </div>
                     </td>
                   </tr>
@@ -345,7 +345,7 @@ const SendMail = async (email,otp,UserName, template) => {
                   <tr>
                     <td>
                       <p style="font-size: 16px; color: #666666; margin-top: 20px;">Best regards,</p>
-                      <p style="font-size: 16px; color: #333333; font-weight: bold;">The MedGenie Team</p>
+                      <p style="font-size: 16px; color: #333333; font-weight: bold;">The MediGenie Team</p>
                     </td>
                   </tr>
                 </table>
@@ -357,7 +357,7 @@ const SendMail = async (email,otp,UserName, template) => {
     }
 
     const mailOptions = {
-      from: `'MedGenie' <${process.env.USER}>`,
+      from: `'MediGenie' <${process.env.USER}>`,
       to: email,
       subject,
       text,

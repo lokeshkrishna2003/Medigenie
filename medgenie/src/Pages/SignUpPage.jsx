@@ -78,7 +78,7 @@ const SignUpPage = () => {
             </div>
 
             <div className=" w-[475px] shadow-lg px-[35px] py-[20px] rounded-lg">
-                <h1 className='text-[40px] font-bold mb-[30px]'>Join MedGenie</h1>
+                <h1 className='text-[40px] font-bold mb-[30px]'>Join MediGenie</h1>
 
                 <input
                     type="text"
