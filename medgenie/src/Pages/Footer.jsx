@@ -3,6 +3,7 @@ import Mapper from "../Components/Mapper";
 import {useNavigate } from "react-router-dom";
 
 const Footer = (props) => {
+    const [user,setUser] = useState();
     const navigate = useNavigate();
 
     const navigateToHospitals = () => {
