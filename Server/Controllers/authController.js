@@ -10,7 +10,7 @@ const signToken=id=>{
         expiresIn:process.env.JWT_EXPIRES_IN
     });
 }
-// console.log('JWT_SECRET:', process.env.JWT_SECRET);
+
 
 exports.signup=catchAsync(async(req,res,next)=>{
     const newUser =await User.create({

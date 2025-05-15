@@ -3,10 +3,11 @@ const app = require("./app");
 const express=require("express");
 const dotenv = require("dotenv");
 const userRoutes = require('./Routes/userRoutes');
-var cors = require('cors')
+const cors = require('cors')
 require('dotenv').config();
 
 const DB = process.env.DATABASE;
+app.use(cors());
 
 mongoose
   .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })

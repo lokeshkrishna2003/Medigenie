@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import DiagnosesHeading from '../Components/DiagnosesHeading';
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const DropdownForm = () => {
     const jwt = sessionStorage.getItem('jwt');
@@ -58,7 +59,7 @@ const DropdownForm = () => {
         if (jwt) {
             e.preventDefault();
             try {
-                const response = await fetch(`http://127.0.0.1:5000/diagnose_Diabetes`, {
+                const response = await fetch(` http://127.0.0.1:5000/diagnose_Diabetes`, {
                     method: 'POST',
                     credentials: "include",
                     headers: {
@@ -142,7 +143,7 @@ const DropdownForm = () => {
         if (jwt) {
             e.preventDefault();
             try {
-                const response = await fetch(`http://127.0.0.1:5000/diagnose_Thyroid`, {
+                const response = await fetch(` http://127.0.0.1:5000/diagnose_Thyroid`, {
                     method: 'POST',
                     credentials: "include",
                     headers: {
@@ -216,7 +217,7 @@ const DropdownForm = () => {
                 const formData = new FormData();
                 formData.append('image', pneumoniaImage);
 
-                const response = await fetch('http://127.0.0.1:5000/diagnose_Pneumonia', {
+                const response = await fetch(' http://127.0.0.1:5000/diagnose_Pneumonia', {
                     method: 'POST',
                     body: formData,
                     credentials: 'include',
@@ -257,7 +258,7 @@ const DropdownForm = () => {
                 const formData = new FormData();
                 formData.append('image', covidImage);
 
-                const response = await fetch('http://127.0.0.1:5000/diagnose_Covid', {
+                const response = await fetch(' http://127.0.0.1:5000/diagnose_Covid', {
                     method: 'POST',
                     body: formData,
                     credentials: 'include',
@@ -320,7 +321,7 @@ const DropdownForm = () => {
         if (jwt) {
             e.preventDefault();
             try {
-                const response = await fetch(`http://127.0.0.1:5000/diagnose_Breast_Cancer`, {
+                const response = await fetch(` http://127.0.0.1:5000/diagnose_Breast_Cancer`, {
                     method: 'POST',
                     credentials: "include",
                     headers: {
@@ -348,6 +349,8 @@ const DropdownForm = () => {
                     }),
                 })
                 const data = await response.json();
+
+                console.log(data);
 
                 if (data.status === 'success') {
 
@@ -388,18 +391,15 @@ const DropdownForm = () => {
         } else {
             navigateToLogin();
             toast.error("Please login to use all the functions!!")
-
         }
-
     }
 
 
 
 
 
-
-
     const renderForm = () => {
+
         switch (selectedOption) {
             case 'Covid 19':
                 return (
@@ -835,6 +835,7 @@ const DropdownForm = () => {
                     </div>
                 </div>
             </div>
+        <ToastContainer />
         </section>
     );
 };
