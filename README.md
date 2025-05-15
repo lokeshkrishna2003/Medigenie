@@ -69,8 +69,10 @@ The website empowers users by providing them with insights and information, enab
    ![Screenshot 2025-05-15 132233](https://github.com/user-attachments/assets/92a54d44-8329-470a-88b8-a97e8e030e78)
 
  ## Thyroid
-    ![Screenshot 2025-05-15 141453](https://github.com/user-attachments/assets/b1ccadb9-7655-414c-bb15-1c598ceace35)
-    ![Screenshot 2025-05-15 141739](https://github.com/user-attachments/assets/763000e2-efaa-4aef-8fe1-300cd6b675ad)
+    ![Screenshot 2025-05-15 141453](https://github.com/user-attachments/assets/ed07dc2c-2770-47ee-86d8-34992320c87a)
+    ![image](https://github.com/user-attachments/assets/c6c4d95f-e1c1-479c-b713-c7189700c4ad)
+
+
 
 
     
