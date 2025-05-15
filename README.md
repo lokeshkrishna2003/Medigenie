@@ -64,5 +64,10 @@ The website empowers users by providing them with insights and information, enab
   ![Screenshot 2025-05-15 131603](https://github.com/user-attachments/assets/b7c8edbd-ee95-4bcd-95c4-9daaee813d3c)
   ![Screenshot 2025-05-15 131614](https://github.com/user-attachments/assets/070a53c4-1bc0-4c8a-8156-d7eff2b1b6a7)
 
+ ## Breast Cancer
+   ![Screenshot 2025-05-15 132222](https://github.com/user-attachments/assets/4363ff67-8e62-426f-a70f-f901437070ce)
+   ![Screenshot 2025-05-15 132233](https://github.com/user-attachments/assets/92a54d44-8329-470a-88b8-a97e8e030e78)
+
+
  
 
