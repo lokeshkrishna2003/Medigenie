@@ -14,6 +14,8 @@ import PageNotFound from './Pages/PageNotFound';
 import Doctors from './Pages/Doctors';
 import DiagnosesPage from './Pages/DiagnosesPage';
 import ForgotPassword from './Pages/ForgotPassword';
+import VoiceRecorder from './Components/VoiceRecorder';
+
 function App() {
   const HomeSection = useRef(null);
   const AboutSection = useRef(null);
@@ -71,7 +73,8 @@ function App() {
         <Route path='*' element={<PageNotFound />} />
       </Routes>
 
-
+      <VoiceRecorder />
+      
     </div>
   )
 }

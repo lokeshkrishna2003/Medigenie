@@ -18,26 +18,21 @@ const DropdownForm = () => {
     };
 
     const  getValueBetweenZeroAndOne = (input)=> {
-        // Handle exact 0 or 1 by returning a random value
         if (input === 0 || input === 1) {
-          return Math.random(); // Random float in [0, 1)
+          return Math.random();
         }
       
-        // Otherwise, generate a consistent value based on input
         const str = JSON.stringify(input);
       
         let hs = 0;
         for (let i = 0; i < str.length; i++) {
           hs = (hs << 5) - hs + str.charCodeAt(i);
-          hs = hs & hs; // Force to 32-bit signed int
+          hs = hs & hs;
         }
       
         const result = Math.abs(hs) / 0x7FFFFFFF;
         return result;
       }
-    // const randomValue = getValueBetweenZeroAndOne(0.5); // Example input      
-
-
 
     const [prob, setprob] = useState("");
     const [probColour, setProbColour] = useState("ml-[10px] text-[#07f79f]");
