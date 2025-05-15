@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 const VoiceRecorder = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState(null);
+  const [audioId, setAudioId] = useState(null);
 
   const startRecording = async () => {
     try {
@@ -13,6 +14,7 @@ const VoiceRecorder = () => {
       setIsRecording(true);
 
       const chunks = [];
+
       recorder.ondataavailable = (e) => {
         chunks.push(e.data);
       };
@@ -23,12 +25,11 @@ const VoiceRecorder = () => {
         formData.append("audio", audioBlob);
 
         axios.post("http://localhost:3000/upload-audio", formData)
-          .then(() => {
+          .then(res => {
             alert("Audio uploaded successfully!");
+            setAudioId(res.data.fileId);
           })
-          .catch(err => {
-            console.error(err);
-          });
+          .catch(err => console.error(err));
       };
 
       recorder.start();
@@ -49,15 +50,15 @@ const VoiceRecorder = () => {
       {!isRecording && (
         <button
           onClick={startRecording}
-          className="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full text-xl shadow-lg hover:bg-blue-700 transition duration-300 z-50"
+          className="fixed bottom-6 right-6 bg-blue-600 text-white p-4 text-3xl rounded-full shadow-lg hover:bg-blue-700 transition duration-300 z-50"
         >
           🎙️
         </button>
       )}
 
       {isRecording && (
-        <div className="fixed bottom-24 right-6 bg-white p-4 rounded-xl shadow-lg z-50 flex items-center gap-3">
-          <p className="text-black font-medium">Recording...</p>
+        <div className="fixed bottom-24 right-6 bg-white p-5 rounded-xl shadow-lg z-50 flex items-center gap-4">
+          <p className="text-black font-semibold text-lg">Recording...</p>
           <button
             onClick={stopRecording}
             className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
@@ -65,6 +66,10 @@ const VoiceRecorder = () => {
             Stop
           </button>
         </div>
+      )}
+
+      {audioId && (
+        <audio controls src={`http://localhost:3000/audio/${audioId}`} className="mt-6"></audio>
       )}
     </div>
   );
