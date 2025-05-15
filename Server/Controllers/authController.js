@@ -10,6 +10,7 @@ const signToken=id=>{
         expiresIn:process.env.JWT_EXPIRES_IN
     });
 }
+// console.log('JWT_SECRET:', process.env.JWT_SECRET);
 
 exports.signup=catchAsync(async(req,res,next)=>{
     const newUser =await User.create({
@@ -48,11 +49,7 @@ exports.login = catchAsync(async (req, res, next) => {
         status: 'success',
         token,
         data: {
-        "encryptedData":  encryptedData }// Convert ObjectId to string
+        "encryptedData":  encryptedData }
         
     });
 });
-
-
-
-
