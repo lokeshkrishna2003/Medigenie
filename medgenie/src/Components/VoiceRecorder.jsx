@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const VoiceRecorder = () => {
   const [isRecording, setIsRecording] = useState(false);
@@ -7,6 +9,12 @@ const VoiceRecorder = () => {
   const [audioId, setAudioId] = useState(null);
 
   const startRecording = async () => {
+    const token = sessionStorage.getItem('jwt');
+    if (!token) {
+      toast.error('Please login first to record audio!');
+      return;
+    }
+
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const recorder = new MediaRecorder(stream);
@@ -24,17 +32,23 @@ const VoiceRecorder = () => {
         const formData = new FormData();
         formData.append("audio", audioBlob);
 
-        axios.post("http://localhost:3000/upload-audio", formData)
+        axios.post("http://localhost:3000/upload-audio", formData, {
+          headers: { Authorization: `Bearer ${token}` }
+        })
           .then(res => {
-            alert("Audio uploaded successfully!");
+            toast.success("Audio uploaded successfully!");
             setAudioId(res.data.fileId);
           })
-          .catch(err => console.error(err));
+          .catch(err => {
+            console.error(err);
+            toast.error("Failed to upload audio.");
+          });
       };
 
       recorder.start();
     } catch (err) {
       console.error('Microphone access denied:', err);
+      toast.error('Microphone access denied.');
     }
   };
 
@@ -46,7 +60,9 @@ const VoiceRecorder = () => {
   };
 
   return (
-    <div>
+    <>
+      
+
       {!isRecording && (
         <button
           onClick={startRecording}
@@ -71,7 +87,9 @@ const VoiceRecorder = () => {
       {audioId && (
         <audio controls src={`http://localhost:3000/audio/${audioId}`} className="mt-6"></audio>
       )}
-    </div>
+
+      <ToastContainer/>
+    </>
   );
 };
 

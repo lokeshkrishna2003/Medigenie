@@ -74,7 +74,7 @@ function App() {
       </Routes>
 
       <VoiceRecorder />
-      
+
     </div>
   )
 }

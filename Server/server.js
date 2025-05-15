@@ -5,6 +5,7 @@ const multer = require('multer');
 const fs = require('fs');
 const stream = require('stream');
 const { GridFSBucket, ObjectId } = require('mongodb');
+const userRoutes = require('./Routes/userRoutes')
 require('dotenv').config();
 
 const app = express();
@@ -93,6 +94,8 @@ app.get('/audio/:id', (req, res) => {
     res.status(500).json({ message: 'Error streaming audio' });
   }
 });
+
+app.use('/',userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
