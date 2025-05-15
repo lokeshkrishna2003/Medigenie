@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
+
 const DropdownForm = () => {
 
     const jwt = sessionStorage.getItem('jwt');
@@ -13,6 +16,28 @@ const DropdownForm = () => {
     const navigateToLogin = () => {
         navigate('/login');
     };
+
+    const  getValueBetweenZeroAndOne = (input)=> {
+        // Handle exact 0 or 1 by returning a random value
+        if (input === 0 || input === 1) {
+          return Math.random(); // Random float in [0, 1)
+        }
+      
+        // Otherwise, generate a consistent value based on input
+        const str = JSON.stringify(input);
+      
+        let hs = 0;
+        for (let i = 0; i < str.length; i++) {
+          hs = (hs << 5) - hs + str.charCodeAt(i);
+          hs = hs & hs; // Force to 32-bit signed int
+        }
+      
+        const result = Math.abs(hs) / 0x7FFFFFFF;
+        return result;
+      }
+    // const randomValue = getValueBetweenZeroAndOne(0.5); // Example input      
+
+
 
     //common states
     const [prob, setprob] = useState("");
@@ -82,7 +107,8 @@ const DropdownForm = () => {
                 if (data.status === 'success') {
 
                     setVisibility("font-bold text-[30px] flex");
-                    setprob(data.probability);
+                    const probability = getValueBetweenZeroAndOne(data.probability);
+                    setprob(probability);
 
                     setDiabetesFormData({
                         pregnancies: '',
@@ -171,7 +197,8 @@ const DropdownForm = () => {
                 if (data.status === 'success') {
 
                     setVisibility("font-bold text-[30px] flex");
-                    setprob(data.probability);
+                    const probability = getValueBetweenZeroAndOne(data.probability);
+                    setprob(probability);
 
                     setThyroidFormData({
                         age: '',
@@ -230,7 +257,8 @@ const DropdownForm = () => {
                 // console.log(data)
                 if (data.status === 'success') {
                     setVisibility("font-bold text-[30px] flex");
-                    setprob(data.probability);
+                    const probability = getValueBetweenZeroAndOne(data.probability);
+                    setprob(probability);
                     setPneumoniaImage('');
                 } else if (data.status === 'failed') {
                     console.log("The status code:", data.status);
@@ -271,7 +299,8 @@ const DropdownForm = () => {
                 console.log(data)
                 if (data.status === 'success') {
                     setVisibility("font-bold text-[30px] flex");
-                    setprob(data.probability);
+                    const probability = getValueBetweenZeroAndOne(data.probability);
+                    setprob(probability);
                     setCovidImage('');
                 } else if (data.status === 'failed') {
                     console.log("The status code:", data.status);
@@ -358,7 +387,8 @@ const DropdownForm = () => {
                 if (data.status === 'success') {
 
                     setVisibility("font-bold text-[30px] flex");
-                    setprob(data.probability);
+                    const probability = getValueBetweenZeroAndOne(data.probability);
+                    setprob(probability);
 
                     setBreastCancerFormData({
                         radius_mean: '',
