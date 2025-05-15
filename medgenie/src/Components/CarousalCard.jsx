@@ -1,14 +1,11 @@
-import { SwiperSlide } from 'swiper/react';
 import CarousalCardStars from './CarousalCardStars';
 import { useEffect, useState } from 'react';
 
 const CarousalCard = (props) => {
     useEffect(() => {
-        // Create an array with the desired number of stars
-        const starsArray = Array.from({ length: props.count }, (_, index) => (
+        const starsArray = Array.from({ length: props.count}, (_, index) => (
             <CarousalCardStars key={index} />
         ));
-        // Set the stars state with the created array
         setStars(starsArray);
     }, [props.count]);
 

@@ -14,22 +14,22 @@ const CarousalPage = (props) => {
             {
                 "count": 5,
                 "comment": `"MediGenie is a lifesaver! It helped me understand my symptoms and get a diagnosis quickly. Thanks for the peace of mind!`,
-                "name": "Himanshu"
+                "name": "Kalagolta Bharath Kumar Reddy"
             },
             {
                 "count": 4,
                 "comment": `"I was worried about my health, but MediGenie provided a clear diagnosis and valuable information. I can't thank you enough!"`,
-                "name": "Gyandeep"
+                "name": "Lokesh Krishna"
             },
             {
                 "count": 5,
                 "comment": `"What a fantastic resource! The accurate diagnosis I received from MediGenie saved me from unnecessary stress and doctor visits."`,
-                "name": "Praveen"
+                "name": "Jaswanth Reddy"
             },
             {
                 "count": 5,
                 "comment": `"I'm impressed with the accuracy of the diagnoses on MediGenie. It's like having a virtual doctor at my fingertips!."`,
-                "name": "Mohit Raghav"
+                "name": "Shashi vardhan Reddy"
             },
 
 

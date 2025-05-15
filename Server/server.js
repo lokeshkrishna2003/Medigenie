@@ -20,6 +20,7 @@ mongoose
 const port = 3000;
 
 app.use('/signup',userRoutes);
+app.use('/sendMessage',userRoutes);
 
 app.listen(port, () => {
   console.log("listening on port 3000");

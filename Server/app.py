@@ -59,7 +59,6 @@ def diagnose_Thyroid():
         return jsonify({'error': str(e)})
 
 #Breast Cancer Controller
-
 @app.route('/diagnose_Breast_Cancer', methods=['POST'])
 def diagnose_Breast_Cancer():
     try:
@@ -74,7 +73,6 @@ def diagnose_Breast_Cancer():
         return jsonify({'error': str(e)})       
 
 #Pneumonia Controller
-
 @app.route('/diagnose_Pneumonia', methods=['POST'])
 def diagnose_Pneumonia():
     try:
@@ -95,7 +93,6 @@ def diagnose_Pneumonia():
     
 
 #Covid Controller
-
 @app.route('/diagnose_Covid', methods=['POST'])
 def diagnose_Covid():
     try:

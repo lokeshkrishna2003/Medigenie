@@ -10,6 +10,7 @@ const ConnectWithUs = (props) => {
     const navigateTo = (address) => {
         navigate(address);
     };
+    
     const encryptedData = sessionStorage.getItem('encryptedData');
     const jwt = sessionStorage.getItem('jwt');
     const [name, setName] = useState("");
@@ -30,7 +31,6 @@ const ConnectWithUs = (props) => {
             try {
                 const response = await fetch(`http://localhost:3000/sendMessage/${encryptedData}`, {
                     method: 'POST',
-                    credentials: "include",
                     headers: {
                         "Content-Type": "application/json",
                     },
@@ -56,16 +56,12 @@ const ConnectWithUs = (props) => {
                     }
                     const errorData = await response.json();
                     throw new Error(errorData.error);
-
-
                 }
 
             } catch (err) {
                 console.error(`Error sending the message`, err.message);
 
             }
-
-
         }
     }
     return (
@@ -105,6 +101,9 @@ const ConnectWithUs = (props) => {
                     </button>
                 </div>
             </div>
+
+             <ToastContainer/>
+
         </section>
     );
 }

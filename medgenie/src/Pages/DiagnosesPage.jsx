@@ -14,7 +14,6 @@ const DropdownForm = () => {
         navigate('/login');
     };
 
-    //common states
     const [prob, setprob] = useState("");
     const [probColour, setProbColour] = useState("ml-[10px] text-[#07f79f]");
     const [visibility, setVisibility] = useState("font-bold text-[30px] hidden ");
@@ -23,7 +22,7 @@ const DropdownForm = () => {
         setVisibility("font-bold text-[30px] hidden");
         setSelectedOption(event.target.value);
     };
-    //probability text colour
+
     useEffect(() => {
         if (parseFloat(prob) >= 0.75) {
             setProbColour("ml-[10px]  text-[#f70733]")
@@ -35,8 +34,6 @@ const DropdownForm = () => {
     }, [prob]);
 
 
-
-    //diabetes states and request
     const [diabetesFormData, setDiabetesFormData] = useState({
         pregnancies: '',
         glucose: '',
@@ -115,9 +112,6 @@ const DropdownForm = () => {
     }
 
 
-
-    //Thyroid states and request
-
     const [thyroidFormData, setThyroidFormData] = useState({
         age: '',
         on_thyroxine: '',
@@ -167,7 +161,7 @@ const DropdownForm = () => {
                 const data = await response.json();
                 
                 console.log(data);
-                
+
                 if (data.status === 'success') {
 
                     setVisibility("font-bold text-[30px] flex");
@@ -205,8 +199,6 @@ const DropdownForm = () => {
 
     }
 
-
-    //pneumonia states and request
     const [pneumoniaImage, setPneumoniaImage] = useState('');
     const handlePneumoniaInputChange = (e) => {
         setPneumoniaImage(e.target.files[0]);
@@ -227,7 +219,6 @@ const DropdownForm = () => {
                 });
 
                 const data = await response.json();
-                // console.log(data)
                 if (data.status === 'success') {
                     setVisibility("font-bold text-[30px] flex");
                     setprob(data.probability);
@@ -247,7 +238,7 @@ const DropdownForm = () => {
         }
 
     };
-    // Covid states and request
+
     const [covidImage, setCovidImage] = useState('');
     const handleCovidInputChange = (e) => {
         setCovidImage(e.target.files[0]);
@@ -264,7 +255,6 @@ const DropdownForm = () => {
                 const response = await fetch(' http://127.0.0.1:5000/diagnose_Covid', {
                     method: 'POST',
                     body: formData,
-                    credentials: 'include',
                 });
 
                 const data = await response.json();
@@ -286,11 +276,8 @@ const DropdownForm = () => {
             toast.error("Please login to use all the functions!!")
 
         }
-
     }
 
-
-    //Breast Cancer states and request
     const [breastCancerFormData, setBreastCancerFormData] = useState({
         radius_mean: '',
         texture_mean: '',
@@ -396,10 +383,6 @@ const DropdownForm = () => {
             toast.error("Please login to use all the functions!!")
         }
     }
-
-
-
-
 
     const renderForm = () => {
 
