@@ -15,7 +15,6 @@ const SignUpPage = () => {
         try {
             const response = await fetch(`http://localhost:3000/signup`, {  
                 method: 'POST',
-                credentials: "include",
                 headers: {
                     "Content-Type": "application/json",
                 },

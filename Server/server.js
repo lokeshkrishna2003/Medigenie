@@ -7,6 +7,7 @@ const cors = require('cors')
 require('dotenv').config();
 
 const DB = process.env.DATABASE;
+
 app.use(cors());
 
 mongoose

@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const DropdownForm = () => {
+
     const jwt = sessionStorage.getItem('jwt');
     
     const navigate = useNavigate();
@@ -164,7 +165,9 @@ const DropdownForm = () => {
                     }),
                 })
                 const data = await response.json();
-
+                
+                console.log(data);
+                
                 if (data.status === 'success') {
 
                     setVisibility("font-bold text-[30px] flex");
