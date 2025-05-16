@@ -24,12 +24,12 @@ const AdminAudio = () => {
     };
 
     fetchAudios();
-    // Listen for audio upload signals
+
   const channel = new BroadcastChannel('audioUploadChannel');
   channel.onmessage = (event) => {
     if (event.data === 'new-audio-uploaded') {
       console.log("🔄 Refreshing audios on admin side...");
-      fetchAudios(); // refresh only when a new audio comes in
+      fetchAudios();
     }
   };
 
