@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import './App.css'
 import Navbar from './Components/Navbar'
 import Hero from './Pages/Hero'
@@ -17,6 +15,7 @@ import ForgotPassword from './Pages/ForgotPassword';
 import VoiceRecorder from './Components/VoiceRecorder';
 import Admin from './Pages/Admin';
 import AdminUser from './Pages/AdminUser'
+import AdminAudio from './Pages/AdminAudio'
 function App() {
   const HomeSection = useRef(null);
   const AboutSection = useRef(null);
@@ -74,6 +73,7 @@ function App() {
         <Route path='*' element={<PageNotFound />} />
         <Route path="/admin-dashboard" element= {<Admin/>}/>
         <Route path="/admin-users"  element={<AdminUser/>} />
+        <Route path="/admin-audio" element={<AdminAudio/>} />
       </Routes>
 
       <VoiceRecorder />

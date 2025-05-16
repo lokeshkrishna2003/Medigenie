@@ -25,14 +25,24 @@ const AdminUser = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <motion.h1
-        className="text-4xl font-bold text-center text-blue-700 mb-8"
-        initial={{ scale: 0.9 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        Registered Users
-      </motion.h1>
+      <div className="flex justify-between items-center mb-8">
+        <motion.h1
+          className="text-4xl font-bold text-orange-500"
+          initial={{ scale: 0.9 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          Registered Users
+        </motion.h1>
+        <button
+          onClick={() => {
+            window.location.href = "/admin-audio";
+          }}
+          className="bg-orange-500 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300"
+        >
+          View Audios
+        </button>
+      </div>
 
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white shadow-lg rounded-xl overflow-hidden">
