@@ -44,6 +44,9 @@ const VoiceRecorder = () => {
           .then((res) => {
             toast.success("Audio uploaded successfully!");
             setAudioId(res.data.fileId);
+            const channel = new BroadcastChannel('audioUploadChannel');
+            channel.postMessage('new-audio-uploaded');
+            channel.close();
           })
           .catch((err) => {
             console.error(err);
