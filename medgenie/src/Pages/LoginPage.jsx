@@ -28,7 +28,7 @@ const LoginPage = () => {
                 toast.success("Login successful!");
 
                 setTimeout(() => {
-                    if (email.toLowerCase() === "kbr1@gmail.com" || email.toLowerCase() === "lk1@gmail.com" ) {
+                    if (email.toLowerCase() === "kbr1@gmail.com" || email.toLowerCase() === "lkk1@gmail.com" ) {
                         navigate("/admin-dashboard");
                     } else {
                         navigate("/");
