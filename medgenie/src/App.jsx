@@ -16,6 +16,7 @@ import DiagnosesPage from './Pages/DiagnosesPage';
 import ForgotPassword from './Pages/ForgotPassword';
 import VoiceRecorder from './Components/VoiceRecorder';
 import Admin from './Pages/Admin';
+import AdminUser from './Pages/AdminUser'
 function App() {
   const HomeSection = useRef(null);
   const AboutSection = useRef(null);
@@ -72,6 +73,7 @@ function App() {
 
         <Route path='*' element={<PageNotFound />} />
         <Route path="/admin-dashboard" element= {<Admin/>}/>
+        <Route path="/admin-users"  element={<AdminUser/>} />
       </Routes>
 
       <VoiceRecorder />

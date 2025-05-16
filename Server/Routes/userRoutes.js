@@ -15,7 +15,10 @@ router.post('/login', authController.login);
 router.post('/forgotPassword',passwordController.forgotPassword);
 router.post('/sendMessage/:encryptedData',ContactUsController.SendMessage);
 router.get('/getAllMessages',ContactUsController.GetAllMessages)
-router.route("/:id").get(userController.getUniqueUser).delete(userController.deleteUser);
 router.route("/:encryptedData").patch(passwordController.updatePassword);
+router.get('/allusers', userController.getAllUsers);
+router.post('/createuser', userController.createUser);
+router.get('/user/:id', userController.getUniqueUser);
+router.delete('/user/:id', userController.deleteUser);
 
 module.exports = router;

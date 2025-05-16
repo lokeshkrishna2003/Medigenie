@@ -32,7 +32,7 @@ const Admin = () => {
           transition={{ delay: 0.8, duration: 1 }}
         >
           <motion.button
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/admin-users")}
             className="bg-purple-600 text-white font-semibold px-6 py-4 rounded-full flex items-center justify-center shadow-lg hover:bg-purple-700 transition transform hover:scale-105"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
