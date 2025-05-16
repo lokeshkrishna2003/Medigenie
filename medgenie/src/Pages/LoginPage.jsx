@@ -20,10 +20,21 @@ const LoginPage = () => {
             const data = await response.json();
 
             if (response.ok && data.status === 'success') {
+                // Store token and encrypted data in session
                 sessionStorage.setItem("jwt", data.token);
                 sessionStorage.setItem("encryptedData", data.data.encryptedData);
+                
                 toast.success("Login successful!");
-                setTimeout(() => navigate('/'), 1000);
+
+                // Delay redirect for 1 second to show toast
+                setTimeout(() => {
+                    // Role-based redirect using hardcoded email
+                    if (email.toLowerCase() === "kbr1@gmail.com" || email.toLowerCase() === "lk1@gmail.com" ) {
+                        navigate("/admin-dashboard");
+                    } else {
+                        navigate("/");
+                    }
+                }, 1000);
             } else {
                 toast.error(data.message || "Login failed");
             }
@@ -31,6 +42,8 @@ const LoginPage = () => {
             console.error(`Error logging in:`, err.message);
             toast.error("An error occurred while logging in.");
         }
+
+        // Clear input fields
         setEmail("");
         setPassword("");
     };
@@ -44,19 +57,39 @@ const LoginPage = () => {
             <div className="w-[475px] shadow-lg px-[35px] py-[20px] rounded-lg">
                 <h1 className='text-[40px] font-bold mb-[30px]'>Welcome Back</h1>
 
-                <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}
-                    className="w-[400px] h-[50px] rounded-xl my-[10px] border p-[10px]" />
+                <input 
+                    type="email" 
+                    placeholder="Email" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-[400px] h-[50px] rounded-xl my-[10px] border p-[10px]" 
+                />
 
-                <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}
-                    className="w-[400px] h-[50px] rounded-xl my-[10px] border p-[10px]" />
+                <input 
+                    type="password" 
+                    placeholder="Password" 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-[400px] h-[50px] rounded-xl my-[10px] border p-[10px]" 
+                />
 
-                <button className="w-[400px] h-[50px] bg-[#18A0A9] text-white font-medium rounded-xl my-[10px]"
-                    onClick={handleLogIn}>Login</button>
+                <button 
+                    className="w-[400px] h-[50px] bg-[#18A0A9] text-white font-medium rounded-xl my-[10px]"
+                    onClick={handleLogIn}
+                >
+                    Login
+                </button>
 
                 <div className='mt-[10px]'>
-                    Not registered yet? <Link to="/signup" className='text-blue-500 hover:underline'>Create account</Link>
+                    Not registered yet?{" "}
+                    <Link to="/signup" className='text-blue-500 hover:underline'>
+                        Create account
+                    </Link>
                 </div>
-                <Link to="/forgetPassword" className='text-blue-500 hover:underline'>Forget Password?</Link>
+
+                <Link to="/forgetPassword" className='text-blue-500 hover:underline'>
+                    Forget Password?
+                </Link>
             </div>
 
             <ToastContainer />
