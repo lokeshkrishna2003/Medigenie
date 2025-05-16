@@ -49,7 +49,8 @@ exports.login = catchAsync(async (req, res, next) => {
         status: 'success',
         token,
         data: {
-        "encryptedData":  encryptedData }
+        "encryptedData":  encryptedData 
+        },
         
     });
 });

@@ -20,15 +20,12 @@ const LoginPage = () => {
             const data = await response.json();
 
             if (response.ok && data.status === 'success') {
-                // Store token and encrypted data in session
                 sessionStorage.setItem("jwt", data.token);
                 sessionStorage.setItem("encryptedData", data.data.encryptedData);
                 
                 toast.success("Login successful!");
 
-                // Delay redirect for 1 second to show toast
                 setTimeout(() => {
-                    // Role-based redirect using hardcoded email
                     if (email.toLowerCase() === "kbr1@gmail.com" || email.toLowerCase() === "lk1@gmail.com" ) {
                         navigate("/admin-dashboard");
                     } else {
