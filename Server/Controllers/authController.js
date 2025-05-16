@@ -28,7 +28,8 @@ exports.signup=catchAsync(async(req,res,next)=>{
         data:{
             user:newUser,
             "encryptedData":  encryptedData
-        }
+        },
+        email
     })
 })
 
@@ -51,6 +52,6 @@ exports.login = catchAsync(async (req, res, next) => {
         data: {
         "encryptedData":  encryptedData 
         },
-        
+        email
     });
 });

@@ -26,6 +26,8 @@ const SignUpPage = () => {
             if (response.ok && data.status === 'success') {
                 sessionStorage.setItem("jwt", data.token);
                 sessionStorage.setItem("encryptedData", data.data.encryptedData);
+                sessionStorage.setItem("email",data.email)
+                
                 toast.success("Signup successful!");
                 setTimeout(() => navigate('/'), 1000);
             } else {
