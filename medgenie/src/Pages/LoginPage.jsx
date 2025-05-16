@@ -23,6 +23,7 @@ const LoginPage = () => {
                 sessionStorage.setItem("jwt", data.token);
                 sessionStorage.setItem("encryptedData", data.data.encryptedData);
                 sessionStorage.setItem("email",data.email)
+                sessionStorage.setItem('name',data.name);
                 
                 toast.success("Login successful!");
 

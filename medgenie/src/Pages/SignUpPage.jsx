@@ -27,6 +27,7 @@ const SignUpPage = () => {
                 sessionStorage.setItem("jwt", data.token);
                 sessionStorage.setItem("encryptedData", data.data.encryptedData);
                 sessionStorage.setItem("email",data.email)
+                sessionStorage.setItem('name',data.name);
                 
                 toast.success("Signup successful!");
                 setTimeout(() => navigate('/'), 1000);

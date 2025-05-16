@@ -40,10 +40,15 @@ exports.login = catchAsync(async (req, res, next) => {
     }
 
     const user = await User.findOne({ email }).select('+password');
+    
 
     if (!user || !(await user.correctPassword(password, user.password))) {
         return next(new AppError('Incorrect email or password', 401));
     }
+
+    console.log(user);
+    const name = user.name;
+    console.log(name);
     const token = signToken(user._id);
     const {iv,encryptedData}= Cryption.encrypt(user._id.toString());
     res.status(200).json({
@@ -52,6 +57,7 @@ exports.login = catchAsync(async (req, res, next) => {
         data: {
         "encryptedData":  encryptedData 
         },
-        email
+        email,
+        name
     });
 });
