@@ -67,7 +67,7 @@ const AdminAudio = () =>{
         <table className="min-w-full bg-white shadow-lg rounded-xl overflow-hidden">
           <thead className="bg-blue-600 text-white text-center">
             <tr>
-              <th className="py-4 px-6">Audio Name</th>
+              <th className="py-4 px-6">Patient Name</th>
               <th className="py-4 px-6">Email</th>
               <th className="py-4 px-6">Play</th>
             </tr>

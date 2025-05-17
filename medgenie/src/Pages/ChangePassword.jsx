@@ -22,7 +22,6 @@ const ChangePassword = () => {
         try {
             const response = await fetch(`http://localhost:3000/${encryptedData}`, {
                 method: 'PATCH',
-                credentials: "include",
                 headers: {
                     "Content-Type": "application/json",
                 },

@@ -13,12 +13,22 @@ const signToken=id=>{
 
 
 exports.signup=catchAsync(async(req,res,next)=>{
+
+// console.log(req.body.name);
+// console.log(req.body.email);
+// console.log(req.body.password);
+// console.log(req.body.passwordConfirm);
+    
+    const {name,email,password,passwordConfirm} = req.body;
+
     const newUser =await User.create({
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        passwordConfirm: req.body.passwordConfirm
+        name,
+        email,
+        password,
+        passwordConfirm
     });
+
+
     const token=signToken(newUser._id);
     const {iv,encryptedData}= Cryption.encrypt(newUser._id.toString());
 
