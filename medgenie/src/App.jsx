@@ -16,6 +16,7 @@ import VoiceRecorder from './Components/VoiceRecorder';
 import Admin from './Pages/Admin';
 import AdminUser from './Pages/AdminUser'
 import AdminAudio from './Pages/AdminAudio'
+import AdminAudioFilter from './Pages/AdminAudioFilter'
 function App() {
   const HomeSection = useRef(null);
   const AboutSection = useRef(null);
@@ -74,6 +75,7 @@ function App() {
         <Route path="/admin-dashboard" element= {<Admin/>}/>
         <Route path="/admin-users"  element={<AdminUser/>} />
         <Route path="/admin-audio" element={<AdminAudio/>} />
+        <Route path="/admin-audio-filter" element={<AdminAudioFilter/>}/>
       </Routes>
 
       <VoiceRecorder />

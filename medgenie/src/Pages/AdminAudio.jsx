@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 
-const AdminAudio = () => {
+const AdminAudio = () =>{
+
   const [audios, setAudios] = useState([]);
 
   useEffect(() => {
     const fetchAudios = async () => {
       try {
-        console.log("Fetching audios...");  // <-- Add this
-        console.log("line 12...");  // <-- Add this
+        console.log("Fetching audios...");
+        console.log("line 12...");
         const res = await axios.get("http://localhost:3000/audios");
-        console.log("Fetched audios line 4:", res.data);  // <-- Add this
+        console.log("Fetched audios line 4:", res.data);
         if (Array.isArray(res.data)) {
           setAudios(res.data);
         } else {
@@ -25,16 +26,15 @@ const AdminAudio = () => {
 
     fetchAudios();
 
-  const channel = new BroadcastChannel('audioUploadChannel');
-  channel.onmessage = (event) => {
-    if (event.data === 'new-audio-uploaded') {
-      console.log("🔄 Refreshing audios on admin side...");
-      fetchAudios();
-    }
-  };
+    const channel = new BroadcastChannel("audioUploadChannel");
+    channel.onmessage = (event) => {
+      if (event.data === "new-audio-uploaded") {
+        console.log("🔄 Refreshing audios on admin side...");
+        fetchAudios();
+      }
+    };
 
-  // Cleanup listener
-  return () => channel.close();
+    return () => channel.close();
   }, []);
 
   return (
@@ -44,14 +44,24 @@ const AdminAudio = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <motion.h1
-        className="text-4xl font-bold text-center text-blue-700 mb-8"
-        initial={{ scale: 0.9 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        Uploaded Audios
-      </motion.h1>
+      <div className="flex justify-between items-center mb-8">
+        <motion.h1
+          className="text-4xl font-bold text-red-700"
+          initial={{ scale: 0.9 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          Uploaded Audios
+        </motion.h1>
+        <button
+          onClick={() => {
+            window.location.href = "/admin-audio-filter";
+          }}
+          className="bg-red-700 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow transition duration-300"
+        >
+          Prior Patients
+        </button>
+      </div>
 
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white shadow-lg rounded-xl overflow-hidden">
@@ -75,11 +85,10 @@ const AdminAudio = () => {
               </motion.tr>
             ) : (
               audios.map((audio, index) => {
-                const audioUrl = `http://localhost:3000/audio/${audio.id}`; // use fileId here
-
+                const audioUrl = `http://localhost:3000/audio/${audio.id}`;
                 return (
                   <motion.tr
-                    key={audio.id} // use fileId as key
+                    key={audio.id}
                     className="text-center border-b border-gray-300"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
